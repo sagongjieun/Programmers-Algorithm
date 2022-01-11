@@ -27,4 +27,3 @@ const answer = solution(answers);
 console.log(answer);
 
 // 의문점? answers는 항상 원소가 5개로 이루어져있나? / 전부다 정답이 다 틀리다면?
-// 수포자 1,2,3의 규칙성의 개수가 다 다르니 5와 각각 규칙성의 개수와의 최소공배수를 통해 answers와의 규칙성을 찾아낸다

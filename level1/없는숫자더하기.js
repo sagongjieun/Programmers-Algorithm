@@ -20,9 +20,6 @@ const numbers = [1,2,3,4,6,7,8,0]
 const result = solution(numbers);
 console.log(result);
 
-// 이 문제를 통해 알게 된 map, reduce 정리하기
-// https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d 참고 블로그
-
 // 다른 사람의 풀이
 
 // function solution(numbers) {

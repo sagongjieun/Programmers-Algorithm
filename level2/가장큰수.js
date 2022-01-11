@@ -8,21 +8,12 @@ function solution(numbers) {
     
     return answer[0] === '0' ? '0' : answer;
 }
-let numbers = [0,0,0,0,0]; //6210
+let numbers = [0,0,0,0,0];
 const result = solution(numbers);
 console.log(result);
 
-//numbers 배열의 각 원소를 문자열로 저장해서(a, b, c, ...)
-//for문으로 numbers배열 개수만큼 돌려서 배치할수있는대로 다 배치해보고 그걸 answer배열에 넣어놓기
-//answer배열을 sort해서 가장 마지막 인덱스 수를 return하기
-
-//numbers의 각 원소를 가장 왼쪽수가 큰 순서대로 정렬?
-
 //찾은 규칙1 : 오른쪽으로갈수록 작은숫자가오도록 
-
-// 3, 30, 34, 5, 9
-
-// a.replace(/(^0+)/, "");
+// a.replace(/(^0+)/, ""); 의미 : 젤왼쪽에 오는 0 없애기
 
 //11번 테케 : [0,0,0,0] -> 0000으로 return하는 것 0으로 만들어줘야함
 
