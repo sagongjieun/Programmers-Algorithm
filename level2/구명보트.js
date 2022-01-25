@@ -1,25 +1,21 @@
 function solution(people, limit) {
     let boat = 0;
-    let left = 0;
-    let right = people.length - 1;
+    let left = 0; //무게 배열에서 제일 큰 무게
+    let right = people.length - 1; //무게 배열에서 제일 작은 무게
 
-    people.sort((a,b)=>(b-a)); //80 70 50 50
+    people.sort((a,b)=>(b-a)); //무게 순으로 내림차순하고
     while (left < right) {
-        if (people[left] + people[right] > limit) left++;
-        else {
+        if (people[left] + people[right] > limit) left++; //제일 큰 무게 + 제일 작은 무게 > limit 이면 두 명이 같이 보트에 못 탄다는 의미니까 다음 진행을 위해 left++시키고 boat++ 해주기
+        else { //limit보다 같거나 작으면 같이 보트에 탈 수 있는 거니까 다음 진행을 위해 left++, right-- 진행 해주고 boat++ 해주기
             left++;
             right--;
         }
         boat++;
     }
-    if (left == right) boat++;
+    if (left == right) boat++; //마지막으로 남아있는 사람이 있다면 마지막으로 그 사람을 태우기 위한 boat++ 해주기
     return boat;
 }
 
 const people = [70, 50, 80, 50];
 const limit = 100;
 console.log(solution(people, limit));
-
-// 문제 이해 : 한 구명보트에는 최대 2명이 탈 수 있고, limit을 넘으면 안된다(limit까지는 가능) 모든 사람을 다 태우기 위해 필요한 최소한의 구명 보트 개수를 return하라
-
-// 다른 사람의 풀이를 참고했는데, 퀵정렬처럼 left, right를 중간으로 계속 줄여나가는 방식이 인상적이었음 그리디에도 이런걸 적용할수있구나 싶었다!
