@@ -1,11 +1,10 @@
 function solution(s) {
-  let answer = [];
+  for (let i = 1; i <= Number(s.length / 2); i++) {
+    let tempStr = s.substr(0, i);
+    let index = 0;
 
-  if (s.length === 1) return 1;
-
-  for (let i = 1; i <= parseInt(s.length / 2); i++) {
-    for (let j = 0; j < s.length; j += i) {
-      let current = s.substr(j, i);
+    for (index = i; index <= s.length; index += i) {
+      let nextStr = s.substr(index, i);
     }
   }
 }
