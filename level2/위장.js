@@ -1,13 +1,15 @@
 function solution(clothes) {
-  let answer = clothes.length; // 초기값은 clothes의 길이로 시작 (각 하나씩 입는 경우)
-  let hash = [];
+  let answer = 1;
 
-  for (const cloth of clothes) {
-    console.log(cloth);
-    // hash.push({cloth[1] : cloth[0]});
-  }
+  let hash = clothes.reduce((acc, cloth) => {
+    acc[cloth[1]] = acc[cloth[1]] ? acc[cloth[1]] + 1 : 1;
+    return acc;
+  }, {});
 
-  //   console.log(hash);
+  // +1 : 해당 옷만 입은 경우에 대해
+  for (let key in hash) answer *= hash[key] + 1;
+
+  return answer - 1;
 }
 
 const clothes = [
